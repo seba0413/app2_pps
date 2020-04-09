@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app2pps": {
+      "hosting": {
+        "app": [
+          "app2pps"
+        ]
+      }
+    }
+  }
+}
