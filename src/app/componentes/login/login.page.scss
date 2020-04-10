@@ -38,6 +38,12 @@
     animation-delay: 1s;
   }
 
+  .datos-incorrectos{
+    color: red;
+    font-size: medium;
+    margin-left: 4%;
+  }
+
   @keyframes pulse {
     0% {
       opacity:0;
