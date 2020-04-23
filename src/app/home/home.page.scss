@@ -29,3 +29,46 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-toolbar{
+  background-color: rgb(0, 158, 224);
+}
+
+ion-content{
+  --ion-background-color: #91ac8d;
+}
+
+ion-fab{
+  width: 50px;
+}
+
+#img-temas {
+  max-width: 70%;
+}
+
+.img-tipo {
+  max-width: 110%;
+}
+
+.img-banderas {
+  max-width: 150%;
+}
+
+#f-boton-idioma{
+  top: 10px;
+}
+
+.item-img{
+ max-width: 25%;
+ margin: auto;
+}
+
+ion-button {
+  height: 90px;
+}
+
+ion-item {
+  --padding-top : 0.5em;
+  --padding-bottom : 0.5em;
+  height: 100px;
+}
