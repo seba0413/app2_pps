@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Animales } from '../../data/animales';
+import { Colores } from '../../data/colores';
+import { Entidad } from 'src/modelos/entidad';
+import { Numero } from 'src/data/numeros';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +12,9 @@ import { Animales } from '../../data/animales';
 export class HomePage implements OnInit {
 
   list: any[] = [];
+  animales: Entidad[] = Animales.listaAnimales;
+  colores: Entidad[] = Colores.listaColores;
+  numeros: Entidad[] = Numero.listaNumeros;
   audio = new Audio();
   audioTiempo: any;
   idioma = 0;
@@ -69,6 +75,23 @@ export class HomePage implements OnInit {
         this.idioma = 2;
         break;
     }
+  }
+
+  cambiarTipo(tipo: number) {
+    this.list = [];
+
+    switch (tipo) {
+      case 0:
+        this.list = this.animales;
+        break;
+      case 1:
+        this.list = this.colores;
+        break;
+      case 2:
+        this.list = this.numeros;
+        break;
+    }
+
   }
 
   ngOnInit() {

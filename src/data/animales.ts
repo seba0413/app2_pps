@@ -1,8 +1,8 @@
-import { Animal } from '../modelos/animal';
+import { Entidad } from '../modelos/entidad';
 
 export class Animales {
 
-    public static listaAnimales: Animal[] = [
+    public static listaAnimales: Entidad[] = [
         {
             nombre: 'perro',
             imagen: '/assets/perro.png',

@@ -1,4 +1,4 @@
-export class Animal {
+export class Entidad {
     nombre: string;
     imagen: string;
     esp: string;
