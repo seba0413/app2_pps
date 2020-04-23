@@ -16,8 +16,6 @@ export class HomePage implements OnInit {
   constructor() {}
 
   reproducir( item ) {
-    console.log('item', item);
-
     this.pausarAudio(item);
 
     if (item.reproduciendo) {
@@ -55,6 +53,21 @@ export class HomePage implements OnInit {
       if ( i.nombre !== item.nombre ) {
         i.reproduciendo = false;
       }
+    }
+  }
+
+  cambiarIdioma(idioma: number) {
+
+    switch (idioma) {
+      case 0:
+        this.idioma = 0;
+        break;
+      case 1:
+        this.idioma = 1;
+        break;
+      case 2:
+        this.idioma = 2;
+        break;
     }
   }
 
