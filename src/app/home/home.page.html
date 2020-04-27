@@ -42,7 +42,6 @@
     </ion-fab>
 
     <ion-fab id="f-boton-idioma" horizontal="start" vertical="top" slot="fixed" edge>
-      <!-- <ion-fab horizontal="start" vertical="bottom" slot="fixed"> -->
         <ion-fab-button>
           <img id="img-temas" src="../../assets/opciones.png" alt="">
         </ion-fab-button>
@@ -57,7 +56,10 @@
             <img class="img-tipo" src="../../assets/numeros.png" alt="">
           </ion-fab-button>
         </ion-fab-list>
-      <!-- </ion-fab> -->
     </ion-fab>
+
+    <ion-item>
+      <ion-label (click)="logout()" style="margin-left: 5%; color: blue;"> Logout </ion-label>
+    </ion-item>
   </div>
 </ion-content>

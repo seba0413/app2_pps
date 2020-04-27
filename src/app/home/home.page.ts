@@ -3,6 +3,7 @@ import { Animales } from '../../data/animales';
 import { Colores } from '../../data/colores';
 import { Entidad } from 'src/modelos/entidad';
 import { Numero } from 'src/data/numeros';
+import { AuthService } from '../servicios/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,7 @@ export class HomePage implements OnInit {
   audioTiempo: any;
   idioma = 0;
 
-  constructor() {}
+  constructor( private authService: AuthService) {}
 
   reproducir( item ) {
     this.pausarAudio(item);
@@ -92,6 +93,10 @@ export class HomePage implements OnInit {
         break;
     }
 
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
   ngOnInit() {

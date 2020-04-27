@@ -44,6 +44,19 @@
     margin-left: 4%;
   }
 
+  .imagen-login {
+    height: 55%;
+    width: 95%;
+  }
+
+  ion-button {
+    height: 60px;
+  }
+
+  ion-content{
+    --ion-background-color: #91ac8d;
+  }
+
   @keyframes pulse {
     0% {
       opacity:0;
