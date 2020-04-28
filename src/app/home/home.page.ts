@@ -4,6 +4,7 @@ import { Colores } from '../../data/colores';
 import { Entidad } from 'src/modelos/entidad';
 import { Numero } from 'src/data/numeros';
 import { AuthService } from '../servicios/auth.service';
+import { Howl, Howler } from 'howler';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +17,13 @@ export class HomePage implements OnInit {
   animales: Entidad[] = Animales.listaAnimales;
   colores: Entidad[] = Colores.listaColores;
   numeros: Entidad[] = Numero.listaNumeros;
-  audio = new Audio();
+  audio: Howl = null;
   audioTiempo: any;
   idioma = 0;
 
   constructor( private authService: AuthService) {}
 
   reproducir( item ) {
-    this.pausarAudio(item);
 
     if (item.reproduciendo) {
       item.reproduciendo = false;
@@ -32,17 +32,22 @@ export class HomePage implements OnInit {
 
     switch (this.idioma) {
       case 0:
-        this.audio.src = item.esp;
+        this.audio =  new Howl({
+          src: [item.esp]
+        });
         break;
       case 1:
-        this.audio.src = item.ing;
+        this.audio = new Howl({
+          src: [item.ing]
+        });
         break;
       case 2:
-        this.audio.src = item.por;
+        this.audio = new Howl({
+          src: [item.por]
+        });
         break;
     }
 
-    this.audio.load();
     this.audio.play();
 
     item.reproduciendo = true;
@@ -50,18 +55,18 @@ export class HomePage implements OnInit {
     this.audioTiempo = setTimeout(() => item.reproduciendo = false, item.duracion * 1000);
   }
 
-  private pausarAudio( item: any ) {
-    clearTimeout( this.audioTiempo );
+  // private pausarAudio( item: any ) {
+  //   clearTimeout( this.audioTiempo );
 
-    this.audio.pause();
-    this.audio.currentTime = 0;
+  //   this.audio.pause();
+  //   this.audio.currentTime = 0;
 
-    for ( const i of this.list ) {
-      if ( i.nombre !== item.nombre ) {
-        i.reproduciendo = false;
-      }
-    }
-  }
+  //   for ( const i of this.list ) {
+  //     if ( i.nombre !== item.nombre ) {
+  //       i.reproduciendo = false;
+  //     }
+  //   }
+  // }
 
   cambiarIdioma(idioma: number) {
 
