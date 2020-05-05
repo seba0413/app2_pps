@@ -17,7 +17,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item style="margin-top: 10%;">
+  <ion-item style="margin-top: 20%;">
     <ion-label position="floating">Correo electrónico</ion-label> 
     <ion-input type="text" [(ngModel)]="correo" name="correo"></ion-input>
   </ion-item>
@@ -26,13 +26,10 @@
     <ion-input type="password" [(ngModel)]="clave" name="clave"></ion-input>
   </ion-item>
   <ion-label [hidden]='datosCorrectos' class="datos-incorrectos">Datos incorrectos</ion-label>
-  <img src="assets/icon/logo.png" alt="" class="imagen-login">
+  <img src="assets/juguete.png" alt="" class="imagen-login">
   <br>
   <ion-button expand="block" (click) = "onSubmitLogin()" color="darkblue" style="margin-top: 10%;">Entrar</ion-button>
-
-
-
-    <ion-fab id="f-boton-idioma" horizontal="end" vertical="center" slot="fixed" edge>
+    <ion-fab id="f-boton-idioma" horizontal="center" slot="fixed" edge>
       <ion-fab-button color="yellow">
         <img src="../../../assets/usuario.png" alt="">
       </ion-fab-button>
